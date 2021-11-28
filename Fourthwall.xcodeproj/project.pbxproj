@@ -19,6 +19,11 @@
 		E58908722753896900B2AFD3 /* Challange.md in Resources */ = {isa = PBXBuildFile; fileRef = E58908702753896900B2AFD3 /* Challange.md */; };
 		E58908732753896900B2AFD3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E58908712753896900B2AFD3 /* README.md */; };
 		E589087627538BBC00B2AFD3 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = E589087527538BBC00B2AFD3 /* AlamofireImage */; };
+		E58908782753A9EA00B2AFD3 /* PicsumPhotosAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58908772753A9EA00B2AFD3 /* PicsumPhotosAPI.swift */; };
+		E589087A2753AA0D00B2AFD3 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58908792753AA0D00B2AFD3 /* ImageCollectionViewCell.swift */; };
+		E589087C2753AA2800B2AFD3 /* ImageCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E589087B2753AA2800B2AFD3 /* ImageCollectionViewCellViewModel.swift */; };
+		E58908812753AAA800B2AFD3 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58908802753AAA800B2AFD3 /* Picture.swift */; };
+		E58908832753AD7900B2AFD3 /* PictureListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58908822753AD7900B2AFD3 /* PictureListProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +59,11 @@
 		E51FA5862753892E00FEE4E2 /* FourthwallUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthwallUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E58908702753896900B2AFD3 /* Challange.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Challange.md; sourceTree = "<group>"; };
 		E58908712753896900B2AFD3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E58908772753A9EA00B2AFD3 /* PicsumPhotosAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicsumPhotosAPI.swift; sourceTree = "<group>"; };
+		E58908792753AA0D00B2AFD3 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		E589087B2753AA2800B2AFD3 /* ImageCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		E58908802753AAA800B2AFD3 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
+		E58908822753AD7900B2AFD3 /* PictureListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureListProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +119,8 @@
 			children = (
 				E51FA5632753892C00FEE4E2 /* AppDelegate.swift */,
 				E51FA5652753892C00FEE4E2 /* SceneDelegate.swift */,
-				E51FA5672753892C00FEE4E2 /* CollectionViewController.swift */,
+				E589087F2753AA6B00B2AFD3 /* PicsumAPI */,
+				E589087E2753AA5100B2AFD3 /* ImageCollectionViewController */,
 				E51FA5692753892D00FEE4E2 /* Main.storyboard */,
 				E51FA56C2753892E00FEE4E2 /* Assets.xcassets */,
 				E51FA56E2753892E00FEE4E2 /* LaunchScreen.storyboard */,
@@ -133,6 +144,34 @@
 				E51FA5862753892E00FEE4E2 /* FourthwallUITestsLaunchTests.swift */,
 			);
 			path = FourthwallUITests;
+			sourceTree = "<group>";
+		};
+		E589087D2753AA3700B2AFD3 /* ImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				E58908792753AA0D00B2AFD3 /* ImageCollectionViewCell.swift */,
+				E589087B2753AA2800B2AFD3 /* ImageCollectionViewCellViewModel.swift */,
+			);
+			path = ImageCell;
+			sourceTree = "<group>";
+		};
+		E589087E2753AA5100B2AFD3 /* ImageCollectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E51FA5672753892C00FEE4E2 /* CollectionViewController.swift */,
+				E589087D2753AA3700B2AFD3 /* ImageCell */,
+			);
+			path = ImageCollectionViewController;
+			sourceTree = "<group>";
+		};
+		E589087F2753AA6B00B2AFD3 /* PicsumAPI */ = {
+			isa = PBXGroup;
+			children = (
+				E58908772753A9EA00B2AFD3 /* PicsumPhotosAPI.swift */,
+				E58908802753AAA800B2AFD3 /* Picture.swift */,
+				E58908822753AD7900B2AFD3 /* PictureListProvider.swift */,
+			);
+			path = PicsumAPI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,9 +313,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E58908782753A9EA00B2AFD3 /* PicsumPhotosAPI.swift in Sources */,
+				E589087A2753AA0D00B2AFD3 /* ImageCollectionViewCell.swift in Sources */,
 				E51FA5682753892C00FEE4E2 /* CollectionViewController.swift in Sources */,
+				E589087C2753AA2800B2AFD3 /* ImageCollectionViewCellViewModel.swift in Sources */,
+				E58908812753AAA800B2AFD3 /* Picture.swift in Sources */,
 				E51FA5642753892C00FEE4E2 /* AppDelegate.swift in Sources */,
 				E51FA5662753892C00FEE4E2 /* SceneDelegate.swift in Sources */,
+				E58908832753AD7900B2AFD3 /* PictureListProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
