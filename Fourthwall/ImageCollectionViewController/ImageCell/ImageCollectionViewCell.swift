@@ -10,6 +10,7 @@ import UIKit
 class ImageCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
 
     override func prepareForReuse() {
         imageView.af.cancelImageRequest()
@@ -18,6 +19,10 @@ class ImageCollectionViewCell: UICollectionViewCell {
 
     func configure(viewModel: ImageCollectionViewCellViewModel) {
         guard let url = viewModel.url else { return }
-        imageView.af.setImage(withURL: url, cacheKey: viewModel.pictureId)
+        imageView.af.setImage(withURL: url,
+                              cacheKey: viewModel.pictureId,
+                              completion: { [weak self] _ in
+            self?.activityIndicator.stopAnimating()
+        })
     }
 }

@@ -14,6 +14,14 @@ class CollectionViewController: UICollectionViewController {
     private var pictures: [Picture] = []
     private var pictureListProvider = PictureListProvider()
 
+    private lazy var navigationBarActivityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.style = .large
+        let barButton = UIBarButtonItem(customView: activityIndicator)
+        navigationItem.setLeftBarButton(barButton, animated: true)
+        return activityIndicator
+    }()
+
     private var itemWidth: CGFloat {
         view.bounds.size.width / 2
     }
@@ -26,11 +34,20 @@ class CollectionViewController: UICollectionViewController {
         super.viewDidLoad()
 
         configureView()
+        downloadPicturesPage()
+    }
 
+    private func downloadPicturesPage() {
+        navigationBarActivityIndicator.startAnimating()
         pictureListProvider.getList { [weak self] pictures in
-            self?.pictures = pictures
-            self?.collectionView.reloadData()
+            self?.updateCollectionView(with: pictures)
         }
+    }
+
+    private func updateCollectionView(with pictures: [Picture]) {
+        navigationBarActivityIndicator.stopAnimating()
+        self.pictures = pictures
+        collectionView.reloadData()
     }
 
     private func configureView() {
