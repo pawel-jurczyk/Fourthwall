@@ -17,9 +17,11 @@ class PhotoDetailsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        updateWithCurrentPicture()
+    }
 
+    func updateWithCurrentPicture() {
         authorsName.text = picture?.author
-
 
         guard let pictureId = picture?.id else { return }
         let itemWidth = Int(UIScreen.main.scale * imageView.bounds.width)
@@ -28,5 +30,16 @@ class PhotoDetailsViewController: UIViewController {
         imageView.af.setImage(withURL: url, completion: { [weak self] _ in
             self?.activityIndicator.stopAnimating()
         })
+    }
+
+    @IBAction func actionButtonTapped(_ sender: UIBarButtonItem) {
+        share()
+    }
+
+    private func share() {
+        guard let image = imageView.image,
+              let text = authorsName.text else { return }
+        let vc = UIActivityViewController(activityItems: [text, image], applicationActivities: [])
+        present(vc, animated: true, completion: nil)
     }
 }

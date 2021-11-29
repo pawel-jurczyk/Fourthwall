@@ -101,7 +101,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TLV-iT-vqf">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="LQt-L2-Kjq"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="LQt-L2-Kjq">
+                            <connections>
+                                <action selector="actionButtonTapped:" destination="BXA-Up-klH" id="Lai-PB-xsY"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="G9x-g3-N0I" id="aBr-jN-Gar"/>
