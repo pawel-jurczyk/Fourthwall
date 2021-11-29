@@ -25,9 +25,10 @@ struct PicsumPhotosAPI {
         return components.url
     }
 
-    static func urlForPictureList() -> URL? {
+    static func urlForPictureList(page: Int) -> URL? {
         var components = commonComponents
         components.path = "/v2/list"
+        components.queryItems = [.init(name: "page", value: "\(page)")]
         return components.url
     }
 }

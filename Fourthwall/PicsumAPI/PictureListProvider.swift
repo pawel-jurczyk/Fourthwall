@@ -21,10 +21,21 @@ class PictureListProvider {
 
     private var completion: (([Picture]) -> Void)?
 
+    private var page = 0
+
+    private var currentPage: Int {
+        get {
+            defer {
+                page += 1
+            }
+            return page
+        }
+    }
+
     func getList(completion: @escaping (([Picture]) -> Void)) {
         dataTask?.cancel()
 
-        guard let url = PicsumPhotosAPI.urlForPictureList() else { return }
+        guard let url = PicsumPhotosAPI.urlForPictureList(page: currentPage) else { return }
 
         self.completion = completion
 

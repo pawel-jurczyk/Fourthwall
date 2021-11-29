@@ -15,6 +15,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         imageView.af.cancelImageRequest()
         imageView.image = nil
+        activityIndicator.startAnimating()
     }
 
     func configure(viewModel: ImageCollectionViewCellViewModel) {

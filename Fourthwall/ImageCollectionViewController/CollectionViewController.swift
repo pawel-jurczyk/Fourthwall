@@ -46,8 +46,21 @@ class CollectionViewController: UICollectionViewController {
 
     private func updateCollectionView(with pictures: [Picture]) {
         navigationBarActivityIndicator.stopAnimating()
-        self.pictures = pictures
-        collectionView.reloadData()
+
+        let indexPaths = indexPathsToInsert(newCount: pictures.count)
+
+        self.pictures += pictures
+
+        collectionView.insertItems(at: indexPaths)
+    }
+
+    private func indexPathsToInsert(newCount: Int) -> [IndexPath] {
+        let startIndex = pictures.count - 1
+        let endIndex = startIndex + newCount
+        let indexes = startIndex...endIndex
+        return indexes.map {
+            .init(item: $0, section: 0)
+        }
     }
 
     private func configureView() {
@@ -84,5 +97,9 @@ extension CollectionViewController {
 
 // MARK: UICollectionViewDelegate
 extension CollectionViewController {
-
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == pictures.count - 1 {
+            downloadPicturesPage()
+        }
+    }
 }
