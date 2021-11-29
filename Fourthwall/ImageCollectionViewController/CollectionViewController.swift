@@ -33,6 +33,8 @@ class CollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "Picscum Photos"
+
         configureView()
         downloadPicturesPage()
     }
@@ -73,6 +75,13 @@ class CollectionViewController: UICollectionViewController {
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         return layout
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "PhotoDetails",
+              let detailViewController = segue.destination as? PhotoDetailsViewController,
+              let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
+        detailViewController.picture = pictures[indexPath.row]
     }
 }
 

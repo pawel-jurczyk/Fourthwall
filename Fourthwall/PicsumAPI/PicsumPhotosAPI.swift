@@ -18,9 +18,12 @@ struct PicsumPhotosAPI {
         return components
     }
 
-    static func urlForPictureWith(itemWidth: Int, pictureId: String) -> URL? {
+    static func urlForPictureWith(itemWidth: Int, itemHeight: Int? = nil, pictureId: String) -> URL? {
         var components = commonComponents
         components.path = "/\(itemWidth)"
+        if let height = itemHeight {
+            components.path += "/\(height)"
+        }
         components.queryItems = [.init(name: "image", value: pictureId)]
         return components.url
     }

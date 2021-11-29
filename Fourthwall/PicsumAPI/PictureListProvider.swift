@@ -58,7 +58,6 @@ class PictureListProvider {
             guard let pictures = try? pictureJSONDecoder.decode([Picture].self, from: data) else { return }
 
             DispatchQueue.main.async { [weak self] in
-                print(pictures)
                 self?.completion?(pictures)
             }
         }

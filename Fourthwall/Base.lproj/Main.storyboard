@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -50,6 +51,7 @@
                                 <connections>
                                     <outlet property="activityIndicator" destination="vnu-8M-BO8" id="PjN-Fo-WFA"/>
                                     <outlet property="imageView" destination="32G-iw-D3X" id="DNA-iY-nB8"/>
+                                    <segue destination="BXA-Up-klH" kind="show" identifier="PhotoDetails" id="ntU-DC-70E"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -63,6 +65,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zn0-Iz-2Vb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="802.89855072463774" y="146.65178571428569"/>
+        </scene>
+        <!--Photo Details View Controller-->
+        <scene sceneID="DrC-Ym-4SX">
+            <objects>
+                <viewController id="BXA-Up-klH" customClass="PhotoDetailsViewController" customModule="Fourthwall" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yLo-YF-8bX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="G9x-g3-N0I">
+                                <rect key="frame" x="188.5" y="293.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author's Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsq-A7-HdW">
+                                <rect key="frame" x="150" y="544" width="114" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RHP-ce-rFy">
+                                <rect key="frame" x="0.0" y="88" width="414" height="448"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="P5O-sf-aCw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zsq-A7-HdW" firstAttribute="centerX" secondItem="yLo-YF-8bX" secondAttribute="centerX" id="1a7-hE-93h"/>
+                            <constraint firstItem="RHP-ce-rFy" firstAttribute="leading" secondItem="P5O-sf-aCw" secondAttribute="leading" id="2ob-GC-xBa"/>
+                            <constraint firstItem="RHP-ce-rFy" firstAttribute="top" secondItem="P5O-sf-aCw" secondAttribute="top" id="AQq-Wq-zDE"/>
+                            <constraint firstItem="RHP-ce-rFy" firstAttribute="trailing" secondItem="P5O-sf-aCw" secondAttribute="trailing" id="Ec9-Gd-CMp"/>
+                            <constraint firstItem="zsq-A7-HdW" firstAttribute="top" secondItem="RHP-ce-rFy" secondAttribute="bottom" constant="8" id="QzE-c1-B7R"/>
+                            <constraint firstItem="G9x-g3-N0I" firstAttribute="centerX" secondItem="RHP-ce-rFy" secondAttribute="centerX" id="ScJ-aA-zmm"/>
+                            <constraint firstItem="RHP-ce-rFy" firstAttribute="height" secondItem="yLo-YF-8bX" secondAttribute="height" multiplier="0.5" id="bcz-kq-uI7"/>
+                            <constraint firstItem="G9x-g3-N0I" firstAttribute="centerY" secondItem="RHP-ce-rFy" secondAttribute="centerY" id="cAg-4k-cfF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="TLV-iT-vqf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="LQt-L2-Kjq"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="G9x-g3-N0I" id="aBr-jN-Gar"/>
+                        <outlet property="authorsName" destination="zsq-A7-HdW" id="eQB-Uz-MJY"/>
+                        <outlet property="imageView" destination="RHP-ce-rFy" id="WJ3-Lj-fq8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bHr-0A-0dR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1673.913043478261" y="146.65178571428569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NkO-90-K3Z">

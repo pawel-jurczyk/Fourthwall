@@ -24,6 +24,7 @@
 		E589087C2753AA2800B2AFD3 /* ImageCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E589087B2753AA2800B2AFD3 /* ImageCollectionViewCellViewModel.swift */; };
 		E58908812753AAA800B2AFD3 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58908802753AAA800B2AFD3 /* Picture.swift */; };
 		E58908832753AD7900B2AFD3 /* PictureListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58908822753AD7900B2AFD3 /* PictureListProvider.swift */; };
+		E58908852755691200B2AFD3 /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58908842755691200B2AFD3 /* PhotoDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		E589087B2753AA2800B2AFD3 /* ImageCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		E58908802753AAA800B2AFD3 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 		E58908822753AD7900B2AFD3 /* PictureListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureListProvider.swift; sourceTree = "<group>"; };
+		E58908842755691200B2AFD3 /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				E51FA5652753892C00FEE4E2 /* SceneDelegate.swift */,
 				E589087F2753AA6B00B2AFD3 /* PicsumAPI */,
 				E589087E2753AA5100B2AFD3 /* ImageCollectionViewController */,
+				E58908842755691200B2AFD3 /* PhotoDetailsViewController.swift */,
 				E51FA5692753892D00FEE4E2 /* Main.storyboard */,
 				E51FA56C2753892E00FEE4E2 /* Assets.xcassets */,
 				E51FA56E2753892E00FEE4E2 /* LaunchScreen.storyboard */,
@@ -318,6 +321,7 @@
 				E51FA5682753892C00FEE4E2 /* CollectionViewController.swift in Sources */,
 				E589087C2753AA2800B2AFD3 /* ImageCollectionViewCellViewModel.swift in Sources */,
 				E58908812753AAA800B2AFD3 /* Picture.swift in Sources */,
+				E58908852755691200B2AFD3 /* PhotoDetailsViewController.swift in Sources */,
 				E51FA5642753892C00FEE4E2 /* AppDelegate.swift in Sources */,
 				E51FA5662753892C00FEE4E2 /* SceneDelegate.swift in Sources */,
 				E58908832753AD7900B2AFD3 /* PictureListProvider.swift in Sources */,
