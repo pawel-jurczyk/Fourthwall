@@ -12,7 +12,7 @@ import UIKit
 class CollectionViewController: UICollectionViewController {
 
     private var pictures: [Picture] = []
-    private var pictureListProvider = PictureListProvider()
+    private var pictureListProvider = PictureProvider()
 
     private lazy var navigationBarActivityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView()
@@ -22,33 +22,44 @@ class CollectionViewController: UICollectionViewController {
         return activityIndicator
     }()
 
-    private var itemWidth: CGFloat {
-        view.bounds.size.width / 2
+    private var itemWidthScaled: Int {
+        Int(UIScreen.main.scale * layout.itemSize.width)
     }
 
-    private var itemWidthScaled: Int {
-        Int(UIScreen.main.scale * itemWidth)
-    }
+    let layout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        return layout
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Picscum Photos"
+        title = "Picsum Photos"
 
         configureView()
         downloadPicturesPage()
     }
 
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        configureItemSize(with: size)
+    }
+
     private func downloadPicturesPage() {
         navigationBarActivityIndicator.startAnimating()
-        pictureListProvider.getList { [weak self] pictures in
-            self?.updateCollectionView(with: pictures)
+        pictureListProvider.getList { [weak self] result in
+            self?.navigationBarActivityIndicator.stopAnimating()
+            switch result {
+            case .success(let pictures):
+                self?.updateCollectionView(with: pictures)
+            case .failure:
+                self?.title = "Downloading error"
+            }
         }
     }
 
     private func updateCollectionView(with pictures: [Picture]) {
-        navigationBarActivityIndicator.stopAnimating()
-
         let indexPaths = indexPathsToInsert(newCount: pictures.count)
 
         self.pictures += pictures
@@ -57,8 +68,8 @@ class CollectionViewController: UICollectionViewController {
     }
 
     private func indexPathsToInsert(newCount: Int) -> [IndexPath] {
-        let startIndex = pictures.count - 1
-        let endIndex = startIndex + newCount
+        let startIndex = pictures.count
+        let endIndex = startIndex + newCount - 1
         let indexes = startIndex...endIndex
         return indexes.map {
             .init(item: $0, section: 0)
@@ -66,15 +77,24 @@ class CollectionViewController: UICollectionViewController {
     }
 
     private func configureView() {
-        collectionView.collectionViewLayout = collectionViewFlowLayout()
+        collectionView.collectionViewLayout = layout
+        configureItemSize(with: view.bounds.size)
     }
 
-    private func collectionViewFlowLayout() -> UICollectionViewFlowLayout {
-        let layout = UICollectionViewFlowLayout()
+    private func configureItemSize(with size: CGSize) {
+        let orientationVertical = size.height > size.width
+        let isPad = UIDevice.current.userInterfaceIdiom == .pad
+
+        let itemWidth: CGFloat
+        switch (orientationVertical, isPad) {
+        case (true, true), (false, false):
+            itemWidth = size.width / 4
+        case (true, false):
+            itemWidth = size.width / 2
+        case (false, true):
+            itemWidth = size.width / 6
+        }
         layout.itemSize = .init(width: itemWidth, height: itemWidth)
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = 0
-        return layout
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

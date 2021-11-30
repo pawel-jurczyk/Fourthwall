@@ -15,6 +15,14 @@ class PhotoDetailsViewController: UIViewController {
 
     var picture: Picture?
 
+    private var itemWidthScaled: Int {
+        Int(UIScreen.main.scale * imageView.bounds.width)
+    }
+
+    private var itemHeightScaled: Int {
+        Int(UIScreen.main.scale * imageView.bounds.height)
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateWithCurrentPicture()
@@ -24,11 +32,14 @@ class PhotoDetailsViewController: UIViewController {
         authorsName.text = picture?.author
 
         guard let pictureId = picture?.id else { return }
-        let itemWidth = Int(UIScreen.main.scale * imageView.bounds.width)
-        let itemHeight = Int(UIScreen.main.scale * imageView.bounds.height)
-        guard let url = PicsumPhotosAPI.urlForPictureWith(itemWidth: itemWidth, itemHeight: itemHeight, pictureId: pictureId) else { return }
-        imageView.af.setImage(withURL: url, completion: { [weak self] _ in
+
+        guard let url = PicsumPhotosAPI.urlForPictureWith(itemWidth: itemWidthScaled, itemHeight: itemHeightScaled, pictureId: pictureId) else { return }
+        imageView.af.setImage(withURL: url, completion: { [weak self] response in
             self?.activityIndicator.stopAnimating()
+            guard response.error == nil else {
+                self?.authorsName.text = "Error loading image"
+                return
+            }
         })
     }
 

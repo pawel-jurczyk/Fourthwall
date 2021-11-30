@@ -16,6 +16,7 @@
 		E51FA57B2753892E00FEE4E2 /* FourthwallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51FA57A2753892E00FEE4E2 /* FourthwallTests.swift */; };
 		E51FA5852753892E00FEE4E2 /* FourthwallUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51FA5842753892E00FEE4E2 /* FourthwallUITests.swift */; };
 		E51FA5872753892E00FEE4E2 /* FourthwallUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51FA5862753892E00FEE4E2 /* FourthwallUITestsLaunchTests.swift */; };
+		E55E0B98275689D500E6C8C9 /* PicsumPhotosAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E0B97275689D500E6C8C9 /* PicsumPhotosAPITests.swift */; };
 		E58908722753896900B2AFD3 /* Challange.md in Resources */ = {isa = PBXBuildFile; fileRef = E58908702753896900B2AFD3 /* Challange.md */; };
 		E58908732753896900B2AFD3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E58908712753896900B2AFD3 /* README.md */; };
 		E589087627538BBC00B2AFD3 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = E589087527538BBC00B2AFD3 /* AlamofireImage */; };
@@ -23,7 +24,7 @@
 		E589087A2753AA0D00B2AFD3 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58908792753AA0D00B2AFD3 /* ImageCollectionViewCell.swift */; };
 		E589087C2753AA2800B2AFD3 /* ImageCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E589087B2753AA2800B2AFD3 /* ImageCollectionViewCellViewModel.swift */; };
 		E58908812753AAA800B2AFD3 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58908802753AAA800B2AFD3 /* Picture.swift */; };
-		E58908832753AD7900B2AFD3 /* PictureListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58908822753AD7900B2AFD3 /* PictureListProvider.swift */; };
+		E58908832753AD7900B2AFD3 /* PictureProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58908822753AD7900B2AFD3 /* PictureProvider.swift */; };
 		E58908852755691200B2AFD3 /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58908842755691200B2AFD3 /* PhotoDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,13 +59,14 @@
 		E51FA5802753892E00FEE4E2 /* FourthwallUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FourthwallUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E51FA5842753892E00FEE4E2 /* FourthwallUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthwallUITests.swift; sourceTree = "<group>"; };
 		E51FA5862753892E00FEE4E2 /* FourthwallUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthwallUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E55E0B97275689D500E6C8C9 /* PicsumPhotosAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicsumPhotosAPITests.swift; sourceTree = "<group>"; };
 		E58908702753896900B2AFD3 /* Challange.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Challange.md; sourceTree = "<group>"; };
 		E58908712753896900B2AFD3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E58908772753A9EA00B2AFD3 /* PicsumPhotosAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicsumPhotosAPI.swift; sourceTree = "<group>"; };
 		E58908792753AA0D00B2AFD3 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		E589087B2753AA2800B2AFD3 /* ImageCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		E58908802753AAA800B2AFD3 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
-		E58908822753AD7900B2AFD3 /* PictureListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureListProvider.swift; sourceTree = "<group>"; };
+		E58908822753AD7900B2AFD3 /* PictureProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureProvider.swift; sourceTree = "<group>"; };
 		E58908842755691200B2AFD3 /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				E51FA57A2753892E00FEE4E2 /* FourthwallTests.swift */,
+				E55E0B97275689D500E6C8C9 /* PicsumPhotosAPITests.swift */,
 			);
 			path = FourthwallTests;
 			sourceTree = "<group>";
@@ -172,7 +175,7 @@
 			children = (
 				E58908772753A9EA00B2AFD3 /* PicsumPhotosAPI.swift */,
 				E58908802753AAA800B2AFD3 /* Picture.swift */,
-				E58908822753AD7900B2AFD3 /* PictureListProvider.swift */,
+				E58908822753AD7900B2AFD3 /* PictureProvider.swift */,
 			);
 			path = PicsumAPI;
 			sourceTree = "<group>";
@@ -324,7 +327,7 @@
 				E58908852755691200B2AFD3 /* PhotoDetailsViewController.swift in Sources */,
 				E51FA5642753892C00FEE4E2 /* AppDelegate.swift in Sources */,
 				E51FA5662753892C00FEE4E2 /* SceneDelegate.swift in Sources */,
-				E58908832753AD7900B2AFD3 /* PictureListProvider.swift in Sources */,
+				E58908832753AD7900B2AFD3 /* PictureProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E55E0B98275689D500E6C8C9 /* PicsumPhotosAPITests.swift in Sources */,
 				E51FA57B2753892E00FEE4E2 /* FourthwallTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -561,7 +565,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 25929P2J27;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -586,7 +590,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 25929P2J27;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
