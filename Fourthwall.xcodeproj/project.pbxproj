@@ -13,10 +13,9 @@
 		E51FA56B2753892D00FEE4E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E51FA5692753892D00FEE4E2 /* Main.storyboard */; };
 		E51FA56D2753892E00FEE4E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E51FA56C2753892E00FEE4E2 /* Assets.xcassets */; };
 		E51FA5702753892E00FEE4E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E51FA56E2753892E00FEE4E2 /* LaunchScreen.storyboard */; };
-		E51FA57B2753892E00FEE4E2 /* FourthwallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51FA57A2753892E00FEE4E2 /* FourthwallTests.swift */; };
-		E51FA5852753892E00FEE4E2 /* FourthwallUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51FA5842753892E00FEE4E2 /* FourthwallUITests.swift */; };
-		E51FA5872753892E00FEE4E2 /* FourthwallUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51FA5862753892E00FEE4E2 /* FourthwallUITestsLaunchTests.swift */; };
 		E55E0B98275689D500E6C8C9 /* PicsumPhotosAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E0B97275689D500E6C8C9 /* PicsumPhotosAPITests.swift */; };
+		E55E0B9A2758B9B800E6C8C9 /* ImageCollectionViewCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E0B992758B9B800E6C8C9 /* ImageCollectionViewCellViewModelTests.swift */; };
+		E55E0B9C2758C22200E6C8C9 /* CollectionViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E0B9B2758C22200E6C8C9 /* CollectionViewControllerModel.swift */; };
 		E58908722753896900B2AFD3 /* Challange.md in Resources */ = {isa = PBXBuildFile; fileRef = E58908702753896900B2AFD3 /* Challange.md */; };
 		E58908732753896900B2AFD3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E58908712753896900B2AFD3 /* README.md */; };
 		E589087627538BBC00B2AFD3 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = E589087527538BBC00B2AFD3 /* AlamofireImage */; };
@@ -36,13 +35,6 @@
 			remoteGlobalIDString = E51FA55F2753892C00FEE4E2;
 			remoteInfo = Fourthwall;
 		};
-		E51FA5812753892E00FEE4E2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E51FA5582753892C00FEE4E2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E51FA55F2753892C00FEE4E2;
-			remoteInfo = Fourthwall;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -55,11 +47,9 @@
 		E51FA56F2753892E00FEE4E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E51FA5712753892E00FEE4E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E51FA5762753892E00FEE4E2 /* FourthwallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FourthwallTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E51FA57A2753892E00FEE4E2 /* FourthwallTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthwallTests.swift; sourceTree = "<group>"; };
-		E51FA5802753892E00FEE4E2 /* FourthwallUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FourthwallUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E51FA5842753892E00FEE4E2 /* FourthwallUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthwallUITests.swift; sourceTree = "<group>"; };
-		E51FA5862753892E00FEE4E2 /* FourthwallUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthwallUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E55E0B97275689D500E6C8C9 /* PicsumPhotosAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicsumPhotosAPITests.swift; sourceTree = "<group>"; };
+		E55E0B992758B9B800E6C8C9 /* ImageCollectionViewCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCellViewModelTests.swift; sourceTree = "<group>"; };
+		E55E0B9B2758C22200E6C8C9 /* CollectionViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewControllerModel.swift; sourceTree = "<group>"; };
 		E58908702753896900B2AFD3 /* Challange.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Challange.md; sourceTree = "<group>"; };
 		E58908712753896900B2AFD3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E58908772753A9EA00B2AFD3 /* PicsumPhotosAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicsumPhotosAPI.swift; sourceTree = "<group>"; };
@@ -86,13 +76,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E51FA57D2753892E00FEE4E2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -103,7 +86,6 @@
 				E58908712753896900B2AFD3 /* README.md */,
 				E51FA5622753892C00FEE4E2 /* Fourthwall */,
 				E51FA5792753892E00FEE4E2 /* FourthwallTests */,
-				E51FA5832753892E00FEE4E2 /* FourthwallUITests */,
 				E51FA5612753892C00FEE4E2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,7 +95,6 @@
 			children = (
 				E51FA5602753892C00FEE4E2 /* Fourthwall.app */,
 				E51FA5762753892E00FEE4E2 /* FourthwallTests.xctest */,
-				E51FA5802753892E00FEE4E2 /* FourthwallUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,19 +118,10 @@
 		E51FA5792753892E00FEE4E2 /* FourthwallTests */ = {
 			isa = PBXGroup;
 			children = (
-				E51FA57A2753892E00FEE4E2 /* FourthwallTests.swift */,
 				E55E0B97275689D500E6C8C9 /* PicsumPhotosAPITests.swift */,
+				E55E0B992758B9B800E6C8C9 /* ImageCollectionViewCellViewModelTests.swift */,
 			);
 			path = FourthwallTests;
-			sourceTree = "<group>";
-		};
-		E51FA5832753892E00FEE4E2 /* FourthwallUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E51FA5842753892E00FEE4E2 /* FourthwallUITests.swift */,
-				E51FA5862753892E00FEE4E2 /* FourthwallUITestsLaunchTests.swift */,
-			);
-			path = FourthwallUITests;
 			sourceTree = "<group>";
 		};
 		E589087D2753AA3700B2AFD3 /* ImageCell */ = {
@@ -165,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				E51FA5672753892C00FEE4E2 /* CollectionViewController.swift */,
+				E55E0B9B2758C22200E6C8C9 /* CollectionViewControllerModel.swift */,
 				E589087D2753AA3700B2AFD3 /* ImageCell */,
 			);
 			path = ImageCollectionViewController;
@@ -221,24 +194,6 @@
 			productReference = E51FA5762753892E00FEE4E2 /* FourthwallTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E51FA57F2753892E00FEE4E2 /* FourthwallUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E51FA5902753892E00FEE4E2 /* Build configuration list for PBXNativeTarget "FourthwallUITests" */;
-			buildPhases = (
-				E51FA57C2753892E00FEE4E2 /* Sources */,
-				E51FA57D2753892E00FEE4E2 /* Frameworks */,
-				E51FA57E2753892E00FEE4E2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E51FA5822753892E00FEE4E2 /* PBXTargetDependency */,
-			);
-			name = FourthwallUITests;
-			productName = FourthwallUITests;
-			productReference = E51FA5802753892E00FEE4E2 /* FourthwallUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -253,10 +208,6 @@
 						CreatedOnToolsVersion = 13.1;
 					};
 					E51FA5752753892E00FEE4E2 = {
-						CreatedOnToolsVersion = 13.1;
-						TestTargetID = E51FA55F2753892C00FEE4E2;
-					};
-					E51FA57F2753892E00FEE4E2 = {
 						CreatedOnToolsVersion = 13.1;
 						TestTargetID = E51FA55F2753892C00FEE4E2;
 					};
@@ -280,7 +231,6 @@
 			targets = (
 				E51FA55F2753892C00FEE4E2 /* Fourthwall */,
 				E51FA5752753892E00FEE4E2 /* FourthwallTests */,
-				E51FA57F2753892E00FEE4E2 /* FourthwallUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -305,13 +255,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E51FA57E2753892E00FEE4E2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -327,6 +270,7 @@
 				E58908852755691200B2AFD3 /* PhotoDetailsViewController.swift in Sources */,
 				E51FA5642753892C00FEE4E2 /* AppDelegate.swift in Sources */,
 				E51FA5662753892C00FEE4E2 /* SceneDelegate.swift in Sources */,
+				E55E0B9C2758C22200E6C8C9 /* CollectionViewControllerModel.swift in Sources */,
 				E58908832753AD7900B2AFD3 /* PictureProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,16 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E55E0B98275689D500E6C8C9 /* PicsumPhotosAPITests.swift in Sources */,
-				E51FA57B2753892E00FEE4E2 /* FourthwallTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E51FA57C2753892E00FEE4E2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E51FA5872753892E00FEE4E2 /* FourthwallUITestsLaunchTests.swift in Sources */,
-				E51FA5852753892E00FEE4E2 /* FourthwallUITests.swift in Sources */,
+				E55E0B9A2758B9B800E6C8C9 /* ImageCollectionViewCellViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,11 +291,6 @@
 			isa = PBXTargetDependency;
 			target = E51FA55F2753892C00FEE4E2 /* Fourthwall */;
 			targetProxy = E51FA5772753892E00FEE4E2 /* PBXContainerItemProxy */;
-		};
-		E51FA5822753892E00FEE4E2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E51FA55F2753892C00FEE4E2 /* Fourthwall */;
-			targetProxy = E51FA5812753892E00FEE4E2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -606,52 +536,6 @@
 			};
 			name = Release;
 		};
-		E51FA5912753892E00FEE4E2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 25929P2J27;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.paewel.FourthwallUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Fourthwall;
-			};
-			name = Debug;
-		};
-		E51FA5922753892E00FEE4E2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 25929P2J27;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.paewel.FourthwallUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Fourthwall;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -678,15 +562,6 @@
 			buildConfigurations = (
 				E51FA58E2753892E00FEE4E2 /* Debug */,
 				E51FA58F2753892E00FEE4E2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E51FA5902753892E00FEE4E2 /* Build configuration list for PBXNativeTarget "FourthwallUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E51FA5912753892E00FEE4E2 /* Debug */,
-				E51FA5922753892E00FEE4E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

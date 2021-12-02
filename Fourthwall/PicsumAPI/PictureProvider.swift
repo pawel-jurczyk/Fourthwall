@@ -14,12 +14,6 @@ class PictureProvider {
         case parsingError
     }
 
-    private var pictureJSONDecoder: JSONDecoder = {
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        return decoder
-    }()
-
     private var dataTask: URLSessionDataTask?
 
     private let defaultSession = URLSession(configuration: .default)
@@ -42,7 +36,7 @@ class PictureProvider {
 
         guard let url = PicsumPhotosAPI.urlForPictureList(page: currentPage) else { return }
 
-        self.listCompletion = completion
+        listCompletion = completion
 
         dataTask = defaultSession.dataTask(with: url) { [weak self] data, response, error in
             self?.handleResponse(data: data, response: response, error: error)
@@ -62,14 +56,14 @@ class PictureProvider {
                   return
               }
 
-        guard let pictures = try? pictureJSONDecoder.decode([Picture].self, from: data) else {
+        guard let pictures = try? Picture.decoder.decode([Picture].self, from: data) else {
             callCompletetion(result: .failure(.parsingError))
             return
         }
         callCompletetion(result: .success(pictures))
     }
 
-    func callCompletetion(result: Result<[Picture], PictureProviderError>) {
+    private func callCompletetion(result: Result<[Picture], PictureProviderError>) {
         DispatchQueue.main.async { [weak self] in
             self?.listCompletion?(result)
             self?.listCompletion = nil

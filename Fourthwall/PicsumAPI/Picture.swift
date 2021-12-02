@@ -14,4 +14,10 @@ struct Picture: Decodable {
     let height: Int
     let url: String
     let downloadUrl: String
+
+    static let decoder: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        return decoder
+    }()
 }

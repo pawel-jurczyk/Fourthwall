@@ -9,8 +9,8 @@ import UIKit
 
 class ImageCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet var imageView: UIImageView!
-    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private var imageView: UIImageView!
+    @IBOutlet private var activityIndicator: UIActivityIndicatorView!
 
     override func prepareForReuse() {
         imageView.af.cancelImageRequest()

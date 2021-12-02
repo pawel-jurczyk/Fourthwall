@@ -11,8 +11,7 @@ import UIKit
 
 class CollectionViewController: UICollectionViewController {
 
-    private var pictures: [Picture] = []
-    private var pictureListProvider = PictureProvider()
+    private var model = CollectionViewControllerModel()
 
     private lazy var navigationBarActivityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView()
@@ -26,7 +25,7 @@ class CollectionViewController: UICollectionViewController {
         Int(UIScreen.main.scale * layout.itemSize.width)
     }
 
-    let layout: UICollectionViewFlowLayout = {
+    private let layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
@@ -36,7 +35,7 @@ class CollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Picsum Photos"
+        title = "Lorem Picsum"
 
         configureView()
         downloadPicturesPage()
@@ -48,31 +47,14 @@ class CollectionViewController: UICollectionViewController {
 
     private func downloadPicturesPage() {
         navigationBarActivityIndicator.startAnimating()
-        pictureListProvider.getList { [weak self] result in
+        model.downloadPicturesPage { [weak self] result in
             self?.navigationBarActivityIndicator.stopAnimating()
             switch result {
-            case .success(let pictures):
-                self?.updateCollectionView(with: pictures)
+            case .success(let indexPaths):
+                self?.collectionView.insertItems(at: indexPaths)
             case .failure:
                 self?.title = "Downloading error"
             }
-        }
-    }
-
-    private func updateCollectionView(with pictures: [Picture]) {
-        let indexPaths = indexPathsToInsert(newCount: pictures.count)
-
-        self.pictures += pictures
-
-        collectionView.insertItems(at: indexPaths)
-    }
-
-    private func indexPathsToInsert(newCount: Int) -> [IndexPath] {
-        let startIndex = pictures.count
-        let endIndex = startIndex + newCount - 1
-        let indexes = startIndex...endIndex
-        return indexes.map {
-            .init(item: $0, section: 0)
         }
     }
 
@@ -101,19 +83,19 @@ class CollectionViewController: UICollectionViewController {
         guard segue.identifier == "PhotoDetails",
               let detailViewController = segue.destination as? PhotoDetailsViewController,
               let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
-        detailViewController.picture = pictures[indexPath.row]
+        detailViewController.picture = model.pictures[indexPath.row]
     }
 }
 
 // MARK: UICollectionViewDataSource
 extension CollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        pictures.count
+        model.pictures.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath)
-        let picture = pictures[indexPath.row]
+        let picture = model.pictures[indexPath.row]
 
         if let imageCell = cell as? ImageCollectionViewCell {
             imageCell.configure(viewModel: .init(itemWidthScaled: itemWidthScaled,
@@ -127,7 +109,7 @@ extension CollectionViewController {
 // MARK: UICollectionViewDelegate
 extension CollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == pictures.count - 1 {
+        if indexPath.row == model.pictures.count - 1 {
             downloadPicturesPage()
         }
     }
