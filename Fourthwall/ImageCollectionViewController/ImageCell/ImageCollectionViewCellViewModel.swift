@@ -6,12 +6,14 @@
 //
 
 import Foundation
+import CoreGraphics
 
 struct ImageCollectionViewCellViewModel {
-    let itemWidthScaled: Int
+    let itemWidthScaled: CGFloat
     let pictureId: String
+    let picsumAPI: PicsumPhotosAPIProtocol.Type
 
     var url: URL? {
-        PicsumPhotosAPI.urlForPictureWith(itemWidth: itemWidthScaled, pictureId: pictureId)
+        picsumAPI.urlForPictureWith(itemWidth: itemWidthScaled, itemHeight: nil, pictureId: pictureId)
     }
 }

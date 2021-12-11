@@ -6,8 +6,14 @@
 //
 
 import Foundation
+import CoreGraphics
 
-struct PicsumPhotosAPI {
+protocol PicsumPhotosAPIProtocol {
+    static func urlForPictureWith(itemWidth: CGFloat, itemHeight: CGFloat?, pictureId: String) -> URL?
+    static func urlForPictureList(page: Int) -> URL?
+}
+
+struct PicsumPhotosAPI: PicsumPhotosAPIProtocol {
 
     private static let api: String = "picsum.photos"
 
@@ -18,11 +24,11 @@ struct PicsumPhotosAPI {
         return components
     }
 
-    static func urlForPictureWith(itemWidth: Int, itemHeight: Int? = nil, pictureId: String) -> URL? {
+    static func urlForPictureWith(itemWidth: CGFloat, itemHeight: CGFloat? = nil, pictureId: String) -> URL? {
         var components = commonComponents
-        components.path = "/\(itemWidth)"
+        components.path = "/\(Int(itemWidth))"
         if let height = itemHeight {
-            components.path += "/\(height)"
+            components.path += "/\(Int(height))"
         }
         components.queryItems = [.init(name: "image", value: pictureId)]
         return components.url

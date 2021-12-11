@@ -8,7 +8,6 @@
 import UIKit
 
 class ImageCollectionViewCell: UICollectionViewCell {
-
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var activityIndicator: UIActivityIndicatorView!
 

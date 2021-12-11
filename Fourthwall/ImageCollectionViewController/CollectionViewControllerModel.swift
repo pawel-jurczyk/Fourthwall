@@ -6,12 +6,44 @@
 //
 
 import Foundation
+import UIKit
 
 class CollectionViewControllerModel {
-    var pictures: [Picture] = []
-    private var pictureListProvider = PictureProvider()
+    private struct NumberOfColumns {
+        static let verticalPad: CGFloat = 4
+        static let horizontalPad: CGFloat = 6
+        static let verticaliPhone: CGFloat = 2
+        static let horizontaliPhone: CGFloat = 4
 
-    func downloadPicturesPage(completion: @escaping ((Result<[IndexPath], PictureProvider.PictureProviderError>) -> Void)) {
+        static func columns(size: CGSize) -> CGFloat {
+            let orientationVertical = size.height > size.width
+            let isPad = UIDevice.current.userInterfaceIdiom == .pad
+            switch (orientationVertical, isPad) {
+            case (true, true):
+                return verticalPad
+            case (false, false):
+                return horizontaliPhone
+            case (true, false):
+                return verticaliPhone
+            case (false, true):
+                return horizontalPad
+            }
+        }
+    }
+
+    var pictures: [Picture] = []
+    private var pictureListProvider: PictureProviderProtocol
+
+    init(pictureProvider: PictureProviderProtocol = PictureProvider()) {
+        self.pictureListProvider = pictureProvider
+    }
+
+    func itemSize(with size: CGSize) -> CGSize {
+        let itemWidth = size.width / NumberOfColumns.columns(size: size)
+        return .init(width: itemWidth, height: itemWidth)
+    }
+
+    func downloadPicturesPage(completion: @escaping ((Result<[IndexPath], PictureProviderError>) -> Void)) {
         pictureListProvider.getList { [weak self] result in
             guard let strongSelf = self else { return }
             DispatchQueue.main.async {

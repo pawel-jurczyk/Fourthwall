@@ -7,13 +7,16 @@
 
 import Foundation
 
-class PictureProvider {
+protocol PictureProviderProtocol {
+    func getList(completion: @escaping ((Result<[Picture], PictureProviderError>) -> Void))
+}
 
-    enum PictureProviderError: Error {
-        case networkError
-        case parsingError
-    }
+enum PictureProviderError: Error {
+    case networkError
+    case parsingError
+}
 
+class PictureProvider: PictureProviderProtocol {
     private var dataTask: URLSessionDataTask?
 
     private let defaultSession = URLSession(configuration: .default)

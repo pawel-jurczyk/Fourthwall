@@ -25,7 +25,7 @@ class PicsumPhotosAPITests: XCTestCase {
         let itemHeight = 234
         let pictureId = "someid"
         // When
-        let url = PicsumPhotosAPI.urlForPictureWith(itemWidth: itemWidth, itemHeight: itemHeight, pictureId: pictureId)
+        let url = PicsumPhotosAPI.urlForPictureWith(itemWidth: CGFloat(itemWidth), itemHeight: CGFloat(itemHeight), pictureId: pictureId)
         // Then
         XCTAssertEqual(url?.absoluteString, "https://picsum.photos/\(itemWidth)/\(itemHeight)?image=\(pictureId)")
     }
@@ -35,7 +35,7 @@ class PicsumPhotosAPITests: XCTestCase {
         let itemWidth = 123
         let pictureId = "someid"
         // When
-        let url = PicsumPhotosAPI.urlForPictureWith(itemWidth: itemWidth, pictureId: pictureId)
+        let url = PicsumPhotosAPI.urlForPictureWith(itemWidth: CGFloat(itemWidth), pictureId: pictureId)
         // Then
         XCTAssertEqual(url?.absoluteString, "https://picsum.photos/\(itemWidth)?image=\(pictureId)")
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E5020B0C2764DE5C00392004 /* PhotoDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5020B0B2764DE5B00392004 /* PhotoDetailsViewModel.swift */; };
 		E51FA5642753892C00FEE4E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51FA5632753892C00FEE4E2 /* AppDelegate.swift */; };
 		E51FA5662753892C00FEE4E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51FA5652753892C00FEE4E2 /* SceneDelegate.swift */; };
 		E51FA5682753892C00FEE4E2 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51FA5672753892C00FEE4E2 /* CollectionViewController.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E5020B0B2764DE5B00392004 /* PhotoDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewModel.swift; sourceTree = "<group>"; };
 		E51FA5602753892C00FEE4E2 /* Fourthwall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fourthwall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E51FA5632753892C00FEE4E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E51FA5652753892C00FEE4E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E5020B0A2764DC7E00392004 /* PhotoDetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E58908842755691200B2AFD3 /* PhotoDetailsViewController.swift */,
+				E5020B0B2764DE5B00392004 /* PhotoDetailsViewModel.swift */,
+			);
+			path = PhotoDetailsViewController;
+			sourceTree = "<group>";
+		};
 		E51FA5572753892C00FEE4E2 = {
 			isa = PBXGroup;
 			children = (
@@ -106,7 +117,7 @@
 				E51FA5652753892C00FEE4E2 /* SceneDelegate.swift */,
 				E589087F2753AA6B00B2AFD3 /* PicsumAPI */,
 				E589087E2753AA5100B2AFD3 /* ImageCollectionViewController */,
-				E58908842755691200B2AFD3 /* PhotoDetailsViewController.swift */,
+				E5020B0A2764DC7E00392004 /* PhotoDetailsViewController */,
 				E51FA5692753892D00FEE4E2 /* Main.storyboard */,
 				E51FA56C2753892E00FEE4E2 /* Assets.xcassets */,
 				E51FA56E2753892E00FEE4E2 /* LaunchScreen.storyboard */,
@@ -265,6 +276,7 @@
 				E58908782753A9EA00B2AFD3 /* PicsumPhotosAPI.swift in Sources */,
 				E589087A2753AA0D00B2AFD3 /* ImageCollectionViewCell.swift in Sources */,
 				E51FA5682753892C00FEE4E2 /* CollectionViewController.swift in Sources */,
+				E5020B0C2764DE5C00392004 /* PhotoDetailsViewModel.swift in Sources */,
 				E589087C2753AA2800B2AFD3 /* ImageCollectionViewCellViewModel.swift in Sources */,
 				E58908812753AAA800B2AFD3 /* Picture.swift in Sources */,
 				E58908852755691200B2AFD3 /* PhotoDetailsViewController.swift in Sources */,

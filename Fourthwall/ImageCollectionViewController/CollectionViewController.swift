@@ -21,8 +21,8 @@ class CollectionViewController: UICollectionViewController {
         return activityIndicator
     }()
 
-    private var itemWidthScaled: Int {
-        Int(UIScreen.main.scale * layout.itemSize.width)
+    private var itemWidthScaled: CGFloat {
+        UIScreen.main.scale * layout.itemSize.width
     }
 
     private let layout: UICollectionViewFlowLayout = {
@@ -42,7 +42,7 @@ class CollectionViewController: UICollectionViewController {
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        configureItemSize(with: size)
+        layout.itemSize =  model.itemSize(with: size)
     }
 
     private func downloadPicturesPage() {
@@ -60,30 +60,15 @@ class CollectionViewController: UICollectionViewController {
 
     private func configureView() {
         collectionView.collectionViewLayout = layout
-        configureItemSize(with: view.bounds.size)
-    }
-
-    private func configureItemSize(with size: CGSize) {
-        let orientationVertical = size.height > size.width
-        let isPad = UIDevice.current.userInterfaceIdiom == .pad
-
-        let itemWidth: CGFloat
-        switch (orientationVertical, isPad) {
-        case (true, true), (false, false):
-            itemWidth = size.width / 4
-        case (true, false):
-            itemWidth = size.width / 2
-        case (false, true):
-            itemWidth = size.width / 6
-        }
-        layout.itemSize = .init(width: itemWidth, height: itemWidth)
+        layout.itemSize = model.itemSize(with: view.bounds.size)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "PhotoDetails",
               let detailViewController = segue.destination as? PhotoDetailsViewController,
               let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
-        detailViewController.picture = model.pictures[indexPath.row]
+        let picture = model.pictures[indexPath.row]
+        detailViewController.viewModel = .init(author: picture.author, pictureId: picture.id, picsumAPI: PicsumPhotosAPI.self)
     }
 }
 
@@ -99,7 +84,8 @@ extension CollectionViewController {
 
         if let imageCell = cell as? ImageCollectionViewCell {
             imageCell.configure(viewModel: .init(itemWidthScaled: itemWidthScaled,
-                                                 pictureId: picture.id))
+                                                 pictureId: picture.id,
+                                                 picsumAPI: PicsumPhotosAPI.self))
         }
 
         return cell
