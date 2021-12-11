@@ -68,7 +68,7 @@ class CollectionViewController: UICollectionViewController {
               let detailViewController = segue.destination as? PhotoDetailsViewController,
               let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
         let picture = model.pictures[indexPath.row]
-        detailViewController.viewModel = .init(author: picture.author, pictureId: picture.id, picsumAPI: PicsumPhotosAPI.self)
+        detailViewController.viewModel = .init(author: picture.author, pictureId: picture.id)
     }
 }
 
@@ -84,8 +84,7 @@ extension CollectionViewController {
 
         if let imageCell = cell as? ImageCollectionViewCell {
             imageCell.configure(viewModel: .init(itemWidthScaled: itemWidthScaled,
-                                                 pictureId: picture.id,
-                                                 picsumAPI: PicsumPhotosAPI.self))
+                                                 pictureId: picture.id))
         }
 
         return cell

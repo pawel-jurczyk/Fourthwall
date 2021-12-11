@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E5020B0C2764DE5C00392004 /* PhotoDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5020B0B2764DE5B00392004 /* PhotoDetailsViewModel.swift */; };
+		E5020B0E2764FAB600392004 /* UIImageView+ScaledSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5020B0D2764FAB600392004 /* UIImageView+ScaledSize.swift */; };
 		E51FA5642753892C00FEE4E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51FA5632753892C00FEE4E2 /* AppDelegate.swift */; };
 		E51FA5662753892C00FEE4E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51FA5652753892C00FEE4E2 /* SceneDelegate.swift */; };
 		E51FA5682753892C00FEE4E2 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51FA5672753892C00FEE4E2 /* CollectionViewController.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		E5020B0B2764DE5B00392004 /* PhotoDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewModel.swift; sourceTree = "<group>"; };
+		E5020B0D2764FAB600392004 /* UIImageView+ScaledSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ScaledSize.swift"; sourceTree = "<group>"; };
 		E51FA5602753892C00FEE4E2 /* Fourthwall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fourthwall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E51FA5632753892C00FEE4E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E51FA5652753892C00FEE4E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,14 @@
 			path = PhotoDetailsViewController;
 			sourceTree = "<group>";
 		};
+		E5020B0F2764FAC900392004 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E5020B0D2764FAB600392004 /* UIImageView+ScaledSize.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E51FA5572753892C00FEE4E2 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +128,7 @@
 				E589087F2753AA6B00B2AFD3 /* PicsumAPI */,
 				E589087E2753AA5100B2AFD3 /* ImageCollectionViewController */,
 				E5020B0A2764DC7E00392004 /* PhotoDetailsViewController */,
+				E5020B0F2764FAC900392004 /* Extensions */,
 				E51FA5692753892D00FEE4E2 /* Main.storyboard */,
 				E51FA56C2753892E00FEE4E2 /* Assets.xcassets */,
 				E51FA56E2753892E00FEE4E2 /* LaunchScreen.storyboard */,
@@ -274,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E58908782753A9EA00B2AFD3 /* PicsumPhotosAPI.swift in Sources */,
+				E5020B0E2764FAB600392004 /* UIImageView+ScaledSize.swift in Sources */,
 				E589087A2753AA0D00B2AFD3 /* ImageCollectionViewCell.swift in Sources */,
 				E51FA5682753892C00FEE4E2 /* CollectionViewController.swift in Sources */,
 				E5020B0C2764DE5C00392004 /* PhotoDetailsViewModel.swift in Sources */,

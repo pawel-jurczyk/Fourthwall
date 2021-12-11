@@ -27,19 +27,13 @@ class PhotoDetailsViewController: UIViewController {
     }
     var viewModel: PhotoDetailsViewModel?
 
-    private func scaledImageSize() -> CGSize {
-        let scale = UIScreen.main.scale
-        let size = imageView.bounds.size
-        return size.applying(.init(scaleX: scale, y: scale))
-    }
-
     override func updateViewConstraints() {
         super.updateViewConstraints()
         updateWithCurrentPicture()
     }
 
     private func updateWithCurrentPicture() {
-        let size = scaledImageSize()
+        let size = imageView.scaledSize
         guard let url = viewModel?.pictureURL(itemWidth: size.width, itemHeight: size.height) else { return }
         imageView.af.setImage(withURL: url, completion: { [weak self] response in
             self?.imageDownloadResponse(response)

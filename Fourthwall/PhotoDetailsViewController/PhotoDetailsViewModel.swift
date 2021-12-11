@@ -13,7 +13,7 @@ struct PhotoDetailsViewModel {
     let pictureId: String
     let picsumAPI: PicsumPhotosAPIProtocol.Type
 
-    init(author: String, pictureId: String, picsumAPI: PicsumPhotosAPIProtocol.Type) {
+    init(author: String, pictureId: String, picsumAPI: PicsumPhotosAPIProtocol.Type = PicsumPhotosAPI.self) {
         self.author = author
         self.pictureId = pictureId
         self.picsumAPI = picsumAPI

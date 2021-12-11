@@ -34,10 +34,16 @@ class PictureProvider: PictureProviderProtocol {
         }
     }
 
+    private var picsumAPI: PicsumPhotosAPIProtocol.Type
+
+    init(picsumAPI: PicsumPhotosAPIProtocol.Type = PicsumPhotosAPI.self) {
+        self.picsumAPI = picsumAPI
+    }
+
     func getList(completion: @escaping ((Result<[Picture], PictureProviderError>) -> Void)) {
         dataTask?.cancel()
 
-        guard let url = PicsumPhotosAPI.urlForPictureList(page: currentPage) else { return }
+        guard let url = picsumAPI.urlForPictureList(page: currentPage) else { return }
 
         listCompletion = completion
 
